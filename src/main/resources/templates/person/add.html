@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodawanie</title>
+</head>
+<body>
+
+<h1> Dodaj osobe do bazy dnaych: </h1>
+
+
+<form th:action="@{/person/create}" method="post">
+    <label>Imie</label>
+        <p><input type="text" th:field="${person.name}"/></p>
+    <label>Nazwisko</label>
+        <p><input type="text" th:field="${person.surname}"/></p>
+
+    <p><input type="submit" value="Add"/></p>
+</form>
+
+</body>
+</html>
