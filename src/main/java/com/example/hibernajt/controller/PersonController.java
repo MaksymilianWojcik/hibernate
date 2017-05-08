@@ -40,4 +40,11 @@ public class PersonController {
     public String success(){
         return "person/success";
     }
+
+
+    @GetMapping("person/show")
+    public String showData(ModelMap modelMap){
+        modelMap.addAttribute("people", personDao.getAll());
+        return "person/show";
+    }
 }
