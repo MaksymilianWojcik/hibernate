@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 
 /**
@@ -22,5 +24,12 @@ public class PersonDaoImplementation implements PersonDao {
     @Transactional
     public void safe(Person person) {
         entityManager.persist(person);
+    }
+
+    @Override
+    @Transactional
+    public List<Person> getAll() {
+        Query query = entityManager.createQuery("Select p From Person p");
+        return query.getResultList();
     }
 }
