@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 /**
  * Created by MAKS on 03.05.2017.
  */
@@ -58,7 +60,7 @@ public class PersonController {
     @PostMapping("person/foundBySurname")
     public String foundBySurname(@ModelAttribute Person person, ModelMap modelMap){
         String surname = person.getSurname();
-        personDao.findBySurname(surname);
+        List<Person> people = personDao.findBySurname(surname);
         return "person/foundBySurname";
     }
 
