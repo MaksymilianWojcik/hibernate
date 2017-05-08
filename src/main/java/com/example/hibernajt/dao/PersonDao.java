@@ -13,4 +13,5 @@ public interface PersonDao {
 
     void safe(Person person);
     List<Person> getAll();
+    List<Person> findBySurname(String surname);
 }
