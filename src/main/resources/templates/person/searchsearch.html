@@ -7,7 +7,7 @@
 <body>
 <h1>Search by surname</h1>
 
-<form th:action="@{/person/results" method="post">
+<form th:action="@{/person/results}" method="post">
     <label>Szukaj po nazwisku</label>
     <p><input type="text" th:field="${person.surname}"/></p>
     <p><input type="submit" value="Search"/></p>
